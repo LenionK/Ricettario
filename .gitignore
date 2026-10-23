@@ -1,0 +1,14 @@
+# Segreti: mai su Git
+.env
+
+# File generati dalla compilazione .NET
+bin/
+obj/
+
+# Dipendenze e build del frontend (anche se client/.gitignore li copre già)
+node_modules/
+dist/
+
+# File personali dell'editor
+.vs/
+*.user
