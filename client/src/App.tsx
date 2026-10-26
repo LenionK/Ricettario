@@ -7,7 +7,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <AppHeader recipeCount={recipeExamples.length} />
+      <AppHeader />
       <main className="page">
         <h2 className="section-title">Tutte le ricette</h2>
         <ul className="recipe-list">

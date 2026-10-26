@@ -1,11 +1,9 @@
 import { BowlIcon, PlusIcon } from './icons'
 import './AppHeader.css'
 
-type AppHeaderProps = {
-  recipeCount: number
-}
 
-export function AppHeader({ recipeCount }: AppHeaderProps) {
+
+export function AppHeader() {
   return (
     <header className="app-header">
       <div className="app-header__brand">
@@ -16,9 +14,6 @@ export function AppHeader({ recipeCount }: AppHeaderProps) {
       </div>
 
       <h1 className="app-header__title">Le tue ricette</h1>
-      <p className="app-header__count">
-        {recipeCount} {recipeCount === 1 ? 'ricetta salvata' : 'ricette salvate'}
-      </p>
 
       <button type="button" className="app-header__button">
         <PlusIcon size={20} />
