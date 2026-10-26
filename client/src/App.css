@@ -8,6 +8,11 @@
   }
 }
 
+.page__message {
+  margin-bottom: 16px;
+  color: var(--color-text-muted);
+}
+
 .section-title {
   font-size: 18px;
   font-weight: 600;
