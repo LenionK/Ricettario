@@ -2,7 +2,7 @@ import type { Recipe } from './types'
 import { BowlIcon, UsersIcon } from '../components/icons'
 import './RecipeCard.css'
 
-const THUMB_TONES = ['sage', 'mustard', 'peach']
+const THUMB_TONES = ['clay', 'sand', 'olive']
 
 export function RecipeCard({ id, title, description, servings }: Recipe) {
   const tone = THUMB_TONES[id % THUMB_TONES.length]

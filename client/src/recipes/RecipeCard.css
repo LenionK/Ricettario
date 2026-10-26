@@ -29,16 +29,16 @@
   color: var(--color-primary);
 }
 
-.recipe-card__thumb--sage {
-  background: #cfdcc4;
+.recipe-card__thumb--clay {
+  background: var(--color-tone-clay);
 }
 
-.recipe-card__thumb--mustard {
-  background: #efdba2;
+.recipe-card__thumb--sand {
+  background: var(--color-tone-sand);
 }
 
-.recipe-card__thumb--peach {
-  background: #efcdbd;
+.recipe-card__thumb--olive {
+  background: var(--color-tone-olive);
 }
 
 .recipe-card__body {
