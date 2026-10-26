@@ -1,0 +1,26 @@
+.status-dots {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.status-dots__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-pending);
+}
+
+.status-dots__dot--ok {
+  background: var(--color-ok);
+}
+
+.status-dots__dot--ko {
+  background: var(--color-ko);
+}
