@@ -25,7 +25,7 @@ Una storia è "fatta" quando:
 | ID   | Storia | Stato |
 |------|--------|-------|
 | US-1 | Come utente voglio **creare una ricetta** (titolo, descrizione, porzioni) per salvarla. | Da fare |
-| US-2 | Come utente voglio **vedere l'elenco delle mie ricette** per ritrovarle. | Da fare |
+| US-2 | Come utente voglio **vedere l'elenco delle mie ricette** per ritrovarle. | Fatto (#3) |
 | US-3 | Come utente voglio **modificare ed eliminare una ricetta** per tenerla aggiornata. | Da fare |
 | US-4 | Come utente voglio aggiungere **ingredienti** (nome, quantità, unità) a una ricetta. | Da fare |
 | US-5 | Come utente voglio aggiungere i **passaggi** di preparazione in ordine. | Da fare |
@@ -63,6 +63,17 @@ Una storia è "fatta" quando:
 
 Obiettivo: scheletro funzionante React → API → PostgreSQL in Docker Compose, con pagina che mostra "API ok | DB ok".
 
-### Sprint 1 – Prime ricette (proposto)
+Ancora da fare: Dockerfile di API e client, nginx, avvio completo con `docker compose up --build`, tag `v0.1.0`.
+
+### Sprint 1 – Prime ricette (in corso)
 
 Storie: **US-1, US-2, US-3** (creare, elencare, modificare/eliminare ricette), senza login.
+
+- [x] US-2 – elenco ricette (PR #3)
+- [ ] US-1 – creare una ricetta
+- [ ] US-3 – modificare ed eliminare una ricetta
+
+Idee emerse durante lo sprint (da pianificare):
+- filtro "Tutte le ricette" per categoria/tag, collegato a **US-7**;
+- pulsante "Nuova ricetta" fisso in basso al centro;
+- stato di caricamento nella pagina dell'elenco.
