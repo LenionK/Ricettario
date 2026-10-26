@@ -1,5 +1,6 @@
 using Api.Data;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
+
 }
 
 app.UseHttpsRedirection();
@@ -30,6 +33,17 @@ app.MapGet("/api/health", async (AppDbContext db) =>
     return Results.Ok(new { api = "ok", db = db_status ? "ok" : "unreachable" });
 })
 .WithName("GetHealth");
+
+app.MapGet("/api/recipes", async (AppDbContext db) =>
+{
+    var recipes = await db.Recipes
+        .OrderBy(r => r.Title)
+        .ToListAsync();
+    return Results.Ok(recipes);
+})
+.WithName("GetRecipes");
+
+
 
 app.Run();
 

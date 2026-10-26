@@ -1,31 +1,40 @@
 import { useEffect, useState } from 'react'
-
-type Health = {
-  api: string
-  db: string
-}
+import { AppHeader } from './components/AppHeader'
+import { StatusDots } from './components/StatusDots'
+import { RecipeCard } from './recipes/RecipeCard'
+import type { Recipe } from './recipes/types'
+import './App.css'
 
 function App() {
-  const [health, setHealth] = useState<Health | null>(null)
+  const [recipes, setRecipes] = useState<Recipe[]>([])
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    fetch('/api/health')
+    fetch('/api/recipes')
       .then((response) => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
-        return response.json() as Promise<Health>
+        return response.json() as Promise<Recipe[]>
       })
-      .then(setHealth)
+      .then(setRecipes)
       .catch(() => setError(true))
   }, [])
 
   return (
-    <main>
-      <h1>Ricettario</h1>
-      {error && <p>API non raggiungibile</p>}
-      {!error && !health && <p>Controllo in corso…</p>}
-      {health && <p>API {health.api} | DB {health.db}</p>}
-    </main>
+    <>
+      <AppHeader />
+      <main className="page">
+        <h2 className="section-title">Tutte le ricette</h2>
+        {error && <p className="page__message">Impossibile caricare le ricette.</p>}
+        <ul className="recipe-list">
+          {recipes.map((recipe) => (
+            <li key={recipe.id}>
+              <RecipeCard {...recipe} />
+            </li>
+          ))}
+        </ul>
+      </main>
+      <StatusDots />
+    </>
   )
 }
 

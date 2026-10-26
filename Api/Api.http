@@ -4,3 +4,8 @@ GET {{Api_HostAddress}}/api/health
 Accept: application/json
 
 ###
+
+GET {{Api_HostAddress}}/api/recipes
+Accept: application/json
+
+###
